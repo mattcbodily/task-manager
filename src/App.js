@@ -1,23 +1,28 @@
 import React from 'react'
+import {withRouter} from 'react-router-dom'
 import './App.css'
 import {RoutesContainer} from './AppStyles'
-import {HashRouter} from 'react-router-dom'
 import Header from './Components/Header/Header'
 import Menu from './Components/Menu/Menu'
 import routes from './routes'
 
-function App() {
+function App(props) {
+  console.log(props)
   return (
-    <HashRouter>
       <div className="App">
+        {props.location.pathname === '/' || props.location.pathname === '/register'
+        ? (<div>
+            {routes}
+          </div>)
+        : (<div>
         <Header />
         <Menu />
         <RoutesContainer>
           {routes}
         </RoutesContainer>
+        </div>)}
       </div>
-    </HashRouter>
   );
 }
 
-export default App;
+export default withRouter(App);
