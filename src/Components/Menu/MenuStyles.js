@@ -20,6 +20,6 @@ export const Img = styled.img`
 
 export const P = styled.p`
     color: #6C787D;
-    margin: 0px 0px 25px 0px;
+    margin: 3px 0px 25px 0px;
     font-size: 13px;
 `

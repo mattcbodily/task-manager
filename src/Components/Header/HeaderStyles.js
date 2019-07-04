@@ -13,7 +13,7 @@ export const HeaderContainer = styled.div`
 
 export const Img = styled.img`
     height: 40px;
-    margin-left: 15px;
+    margin-left: 7px;
 `
 
 export const Span = styled.span`

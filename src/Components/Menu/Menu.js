@@ -1,5 +1,6 @@
 import React from 'react'
 import './Menu.css'
+import {Link} from 'react-router-dom'
 import {MenuContainer, Img, P} from './MenuStyles'
 import logo from './../../assets/placeholder_logo.png'
 import {library} from '@fortawesome/fontawesome-svg-core'
@@ -11,14 +12,22 @@ const Menu = () => {
     return(
         <MenuContainer>
             <Img src={logo} alt='logo'/>
-            <FontAwesomeIcon icon='users' className='icons'/>
-            <P>Teams</P>
-            <FontAwesomeIcon icon='comment-alt' className='icons'/>
-            <P>Messages</P>
-            <FontAwesomeIcon icon='tasks' className='icons'/>
-            <P>Tasks</P>
-            <FontAwesomeIcon icon='calendar-alt' className='icons'/>
-            <P>Schedule</P>
+            <Link to='/teams' className='menu-links'>
+                <FontAwesomeIcon icon='users' className='icons'/>
+                <P>Teams</P>
+            </Link>
+            <Link to='/messages' className='menu-links'>
+                <FontAwesomeIcon icon='comment-alt' className='icons'/>
+                <P>Messages</P>
+            </Link>
+            <Link to='/tasks' className='menu-links'>
+                <FontAwesomeIcon icon='tasks' className='icons'/>
+                <P>Tasks</P>
+            </Link>
+            <Link to='/schedule' className='menu-links'>
+                <FontAwesomeIcon icon='calendar-alt' className='icons'/>
+                <P>Schedule</P>
+            </Link>
         </MenuContainer>
     )
 }
