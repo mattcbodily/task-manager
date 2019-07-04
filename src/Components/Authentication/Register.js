@@ -16,7 +16,6 @@ const Register = (props) => {
 
     const registerEmployee = () => {
         if(password === verPassword){
-            console.log(fullName)
             axios.post('/auth/register', {fullName, email, password, isAdmin})
             .then(res => props.history.push('/tasks'))
         } else {
@@ -28,7 +27,7 @@ const Register = (props) => {
         <AuthContainer>
             <Img src={logo} alt='logo'/>
             <H1>Register</H1>
-            <P>Create your account to start managing tasks</P>
+            <P>Create your account to start managing tasks!</P>
             <div>
                 <Input
                     value={fullName} 
