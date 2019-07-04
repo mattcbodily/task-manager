@@ -7,7 +7,6 @@ import Menu from './Components/Menu/Menu'
 import routes from './routes'
 
 function App(props) {
-  console.log(props)
   return (
       <div className="App">
         {props.location.pathname === '/' || props.location.pathname === '/register'

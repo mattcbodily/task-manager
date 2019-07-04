@@ -7,5 +7,5 @@ insert into employees (
     ${fullName},
     ${email},
     ${password},
-    ${admin}
+    ${isAdmin}
 );

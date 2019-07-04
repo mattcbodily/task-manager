@@ -2,7 +2,7 @@ const bcrypt = require('bcryptjs')
 
 module.exports = {
     register: async(req, res) => {
-        const {fullName, email, password, admin} = req.body;
+        const {fullName, email, password, isAdmin} = req.body;
         const db = req.app.get('db');
         const {session} = req;
         let employee = await db.employee.check_employee({email});
@@ -12,7 +12,7 @@ module.exports = {
         }
         const salt = bcrypt.genSaltSync(10);
         const hash = bcrypt.hashSync(password, salt);
-        let newEmployee = await db.employee.register({fullName, email, password: hash});
+        let newEmployee = await db.employee.register({fullName, email, password: hash, isAdmin});
         newEmployee = newEmployee[0];
         delete newEmployee.password;
         session.employee = newEmployee;
